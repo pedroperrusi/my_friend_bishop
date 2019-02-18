@@ -74,7 +74,7 @@ private:
      */
     inline void setIdxFromXY()
     {
-        idx_pos = x_pos + y_pos;
+        idx_pos = x_pos + y_pos * CHESS_BOARD_WIDTH;
     }
 };
 } // namespace chess
