@@ -16,33 +16,33 @@ using namespace chess;
 TEST(Bishop, default_position)
 {
     Bishop friendBishop;
-    ASSERT_TRUE(friendBishop.getX() == 0);
-    ASSERT_TRUE(friendBishop.getY() == 0);
-    ASSERT_TRUE(friendBishop.getIdx() == 0);
+    ASSERT_EQ(friendBishop.getX(), 0);
+    ASSERT_EQ(friendBishop.getY(), 0);
+    ASSERT_EQ(friendBishop.getIdx(), 0);
 }
 
 TEST(Bishop, initial_position_1_row)
 {
     Bishop friendBishop(1, 0);
-    ASSERT_TRUE(friendBishop.getX() == 1);
-    ASSERT_TRUE(friendBishop.getY() == 0);
-    ASSERT_TRUE(friendBishop.getIdx() == 1);
+    ASSERT_EQ(friendBishop.getX(), 1);
+    ASSERT_EQ(friendBishop.getY(), 0);
+    ASSERT_EQ(friendBishop.getIdx(), 1);
 }
 
 TEST(Bishop, initial_position_3_row)
 {
     // 3rd row starting from 0, as C standard
     Bishop friendBishop(0, 2);
-    ASSERT_TRUE(friendBishop.getX() == 0);
-    ASSERT_TRUE(friendBishop.getY() == 2);
-    ASSERT_TRUE(friendBishop.getIdx() == 16);
+    ASSERT_EQ(friendBishop.getX(), 0);
+    ASSERT_EQ(friendBishop.getY(), 2);
+    ASSERT_EQ(friendBishop.getIdx(), 16);
 }
 
 TEST(Bishop, arbitrary_2D_position_to_idx)
 {
     // 5th row, 2nd collumn starting from 0, as C standard
     Bishop friendBishop(1, 4);
-    ASSERT_TRUE(friendBishop.getX() == 1);
-    ASSERT_TRUE(friendBishop.getY() == 4);
+    ASSERT_EQ(friendBishop.getX(), 1);
+    ASSERT_EQ(friendBishop.getY(), 4);
     ASSERT_EQ(friendBishop.getIdx(), 33);
 }
