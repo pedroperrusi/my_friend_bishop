@@ -21,10 +21,10 @@ TEST(Bishop, default_position)
     ASSERT_TRUE(friendBishop.getIdx() == 0);
 }
 
-TEST(Bishop, initial_position)
+TEST(Bishop, initial_position_1_row)
 {
-    Bishop friendBishop(0, 1);
-    ASSERT_TRUE(friendBishop.getX() == 0);
-    ASSERT_TRUE(friendBishop.getY() == 1);
+    Bishop friendBishop(1, 0);
+    ASSERT_TRUE(friendBishop.getX() == 1);
+    ASSERT_TRUE(friendBishop.getY() == 0);
     ASSERT_TRUE(friendBishop.getIdx() == 1);
 }
