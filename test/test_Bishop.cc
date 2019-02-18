@@ -46,3 +46,21 @@ TEST(Bishop, arbitrary_2D_position_to_idx)
     ASSERT_EQ(friendBishop.getY(), 4);
     ASSERT_EQ(friendBishop.getIdx(), 33);
 }
+
+TEST(Bishop, first_row_idx_to_2d_position)
+{
+    // 5th row, 2nd collumn starting from 0, as C standard
+    Bishop friendBishop(5);
+    ASSERT_EQ(friendBishop.getIdx(), 5);
+    ASSERT_EQ(friendBishop.getX(), 5);
+    ASSERT_EQ(friendBishop.getY(), 0);
+}
+
+TEST(Bishop, second_row_idx_to_2d_position)
+{
+    // 5th row, 2nd collumn starting from 0, as C standard
+    Bishop friendBishop(10);
+    ASSERT_EQ(friendBishop.getIdx(), 10);
+    ASSERT_EQ(friendBishop.getX(), 2);
+    ASSERT_EQ(friendBishop.getY(), 1);
+}

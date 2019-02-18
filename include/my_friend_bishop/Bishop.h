@@ -39,6 +39,12 @@ class Bishop
         setY(y_pos);
         setIdxFromXY();
     };
+    // set initial idx vector position on constructor
+    Bishop(size_t idx_pos)
+    {
+        setIdx(idx_pos);
+        setXYFromIdx();
+    };
     // Class destructor
     ~Bishop()
     {
@@ -75,6 +81,18 @@ private:
     inline void setIdxFromXY()
     {
         idx_pos = x_pos + y_pos * CHESS_BOARD_WIDTH;
+    }
+
+    /**
+     * @brief Set X and Y coordinates based on vectorial idx
+     * 
+     */
+    inline void setXYFromIdx()
+    {
+        // X position is the modulo
+        x_pos = idx_pos % CHESS_BOARD_WIDTH;
+        // Y position is the integer division
+        y_pos = idx_pos / CHESS_BOARD_WIDTH;
     }
 };
 } // namespace chess
