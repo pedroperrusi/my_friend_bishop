@@ -13,6 +13,34 @@ Given an starting position in chess board for the bishop, we must:
 - Determine if the ending position is reachable for a bishop;
 - Determine in how many movements will he arrive there.
 
+## The approach
+
+A chess board of fixed length and height size was considered to solve the challenge.
+A bishop object is defined with a given starting point in the board. 
+If none is specified, defaults to 0.
+
+```(C++)
+// defines a bishop in the default position (x = 0, y = 0)
+Bishop bishop(0, 0);
+```
+
+There are two possible space representations for the bishops position:
+
+- As a 2D point in the chess board
+    - So, defined by an x (cols) and y (rows)
+
+- As a 1D vector where each element is defined by an index number
+
+You may use any of these representations accordingly to your needs:
+
+```(C++)
+// defines a bishop object in the starting position (x = 5, y = 5)
+Bishop bishop2D(5, 5);
+
+// defines a bishop position in the starting position defined by a vector index
+Bishop bishop1D(10); // equivalent to (x = 2, y = 1)
+```
+
 ### Dependencies
 
 * [CMake](https://cmake.org)
