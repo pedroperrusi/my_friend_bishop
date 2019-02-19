@@ -41,7 +41,8 @@ bool Bishop::canGetTo(size_t x_final, size_t y_final)
         reachable = false;
     }
     // if we're on an odd collumn, reverse the relation
-    if(y_pos % 2 == 1)
+    size_t y_diff = y_pos - y_final;
+    if(y_diff % 2 == 1)
     {
         reachable = !reachable;
     }
