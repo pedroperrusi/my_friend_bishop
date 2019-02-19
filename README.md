@@ -4,6 +4,8 @@
 Simple programming logic exercise based on chess.
 Let's get to know our friend bishop and see how it moves!
 
+While the main executable file remain simple, I invite you to review the unit testing cases considered for the challenge.
+
 ## The Challenge
 
 Given an starting position in chess board for the bishop, we must:
@@ -71,42 +73,19 @@ Some adjustments would also be interesting, such as downloading the external dep
 ├── cmake
 │   ├── googletest-download.cmake
 │   └── googletest.cmake
-├── data
-│   ├── bunny_faces.npy
-│   ├── bunny_vertices.npy
-│   ├── face_normals.npy
-│   └── vertex_normals.npy
-├── extern
-│   └── cnpy
-│       ├── CMakeLists.txt
-│       ├── LICENSE
-│       ├── README.md
-│       ├── cnpy.cpp
-│       ├── cnpy.h
-│       ├── example1.cpp
-│       ├── mat2npz
-│       ├── npy2mat
-│       └── npz2mat
 ├── include
-│   └── bunny_mesh
-│       ├── Mesh.h
-│       └── data_io.h
-├── python
-│   └── visualize_mesh.py
+│   └── my_friend_bishop
+│       └── Bishop.h
 ├── scripts
 │   ├── build.sh
 │   ├── clean.sh
 │   ├── cmake.sh
-│   ├── run_bunny_mesh_normals.sh
+│   ├── run_bishop.sh
 │   └── run_tests.sh
 ├── src
-│   ├── CMakeLists.txt
-│   └── Mesh.cc
+│   ├── Bishop.cc
+│   └── CMakeLists.txt
 └── test
     ├── CMakeLists.txt
-    ├── data
-    │   ├── sequential_double.npy
-    │   └── sequential_int.npy
-    ├── test_IO.cc
-    └── test_Mesh.cc
+    └── test_Bishop.cc
 ```
