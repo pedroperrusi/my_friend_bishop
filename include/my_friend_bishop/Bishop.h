@@ -47,6 +47,12 @@ public:
 
   };
 
+  /**
+   * @brief Set the Position object based on 2D coordinates
+   * 
+   * @param x_pos 
+   * @param y_pos 
+   */
   inline void setPosition(size_t x_pos, size_t y_pos)
   {
     setX(x_pos);
@@ -54,12 +60,18 @@ public:
     setIdxFromXY();
   }
 
+  /**
+   * @brief Set the Position object based on vectorial coordinates
+   * 
+   * @param idx_pos 
+   */
    inline void setPosition(size_t idx_pos)
   {
     setIdx(idx_pos);
     setXYFromIdx();
   };
 
+/** Get/Set methods ---------------------- */
   inline size_t getX() { return x_pos; };
 
   inline void setX(size_t x_pos) { this->x_pos = x_pos; }
