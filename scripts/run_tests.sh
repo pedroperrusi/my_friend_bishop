@@ -1,5 +1,5 @@
 #!/bin/bash
 
-echo 'Running Bunny Mesh Tests...'
+echo 'Running My Friend Bishop Tests...'
 
 ./build/bin/bishop_tests
