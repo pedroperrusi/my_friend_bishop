@@ -88,7 +88,6 @@ bash scripts/run_tests.sh
 ## Project Structure
 
 The project structure is based on [An Introduction to Modern CMake](https://cliutils.gitlab.io/modern-cmake/).
-Some adjustments would also be interesting, such as downloading the external dependency CNPY from a CMake file.
 
 ```
 .
