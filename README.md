@@ -51,7 +51,7 @@ Bishop bishop1D(10); // equivalent to (x = 2, y = 1)
 
 ### Usage
 
-In order to perform the basic interface with the bunny-mesh project, you may use the helping bash scripts of the folder [scripts](scripts/). Their names are mostly self explanatory.
+In order to perform the basic interface with the my_friend_bishop project, you may use the helping bash scripts of the folder [scripts](scripts/). Their names are mostly self explanatory.
 
 In order to generate the CMake files:
 
@@ -68,7 +68,7 @@ bash scripts/build.sh
 Finally you may run the project:
 
 ```(bash)
-bash scripts/run_bunny_mesh_normals.sh
+bash scripts/run_bishop.sh
 ```
 
 * Other commands:
