@@ -20,12 +20,11 @@ namespace chess
  * 
  * We can compare the parity between the initial and final position indexes.
  * For the first row (0), if initial index and final index have the same parity, they're reachable.
- * If its an odd row, the relation inverses itself.
+ * If the difference of rows is odd, the relation inverses itself.
  * 
  * @param x_final 
  * @param y_final 
- * @return true 
- * @return false 
+ * @return reachable : true when x and y are reachable from the initial position
  */
 bool Bishop::canGetTo(size_t x_final, size_t y_final)
 {

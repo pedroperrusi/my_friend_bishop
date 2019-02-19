@@ -25,10 +25,9 @@ const size_t CHESS_BOARD_HIGHT = 8;
  */
 inline static size_t idxFromXY(size_t x, size_t y)
 {
-size_t idx = x + y * CHESS_BOARD_WIDTH;
-return idx;
+  size_t idx = x + y * CHESS_BOARD_WIDTH;
+  return idx;
 }
-
 
 /**
  * @brief Class representing our friend Bishop
@@ -77,16 +76,26 @@ public:
    * 
    * @param idx_pos 
    */
-   inline void setPosition(size_t idx_pos)
+  inline void setPosition(size_t idx_pos)
   {
     setIdx(idx_pos);
     setXYFromIdx();
   };
 
+  /**
+ * @brief Verify wheather a position is reachable for the bishop
+ * 
+ * We can compare the parity between the initial and final position indexes.
+ * For the first row (0), if initial index and final index have the same parity, they're reachable.
+ * If the difference of rows is odd, the relation inverses itself.
+ * 
+ * @param x_final 
+ * @param y_final 
+ * @return reachable : true when x and y are reachable from the initial position
+ */
   bool canGetTo(size_t x_final, size_t y_final);
-  
 
-/** Get/Set methods ---------------------- */
+  /** Get/Set methods ---------------------- */
   inline size_t getX() { return x_pos; };
 
   inline void setX(size_t x_pos) { this->x_pos = x_pos; }
