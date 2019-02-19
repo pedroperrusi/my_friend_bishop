@@ -108,9 +108,10 @@ private:
      * @brief Set the Idx From 2D X and Y coordibates
      * 
      */
-  inline void setIdxFromXY()
+  inline size_t setIdxFromXY()
   {
     idx_pos = x_pos + y_pos * CHESS_BOARD_WIDTH;
+    return idx_pos;
   }
 
   /**
