@@ -13,6 +13,9 @@
 
 using namespace chess;
 
+/**
+ * Tests the constructor and its different calls ------------
+ */
 TEST(Bishop, default_position)
 {
     Bishop friendBishop;
@@ -65,6 +68,9 @@ TEST(Bishop, second_row_idx_to_2d_position)
     ASSERT_EQ(friendBishop.getY(), 1);
 }
 
+/**
+ * Tests canGetTo() method  ------------
+ */
 TEST(Bishop, trivial_a_possible_position)
 {
     Bishop friendBishop(1, 2);
@@ -92,6 +98,9 @@ TEST(Bishop, any_col_possible_position)
     ASSERT_FALSE(friendBishop.canGetTo(1,0));
 }
 
+/**
+ * Tests reachableInHowManySteps() method  ------------
+ */
 TEST(Bishop, trivial_reachable_in_0_steps)
 {
     Bishop friendBishop(1, 5);
