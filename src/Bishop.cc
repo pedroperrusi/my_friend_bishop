@@ -83,7 +83,6 @@ int Bishop::reachableInHowManySteps(size_t x_final, size_t y_final)
         return 1;
     }
     // in any other cases, it is reachable in two steps
-    std::cout << diffIdx;
     return 2;
 }
 
