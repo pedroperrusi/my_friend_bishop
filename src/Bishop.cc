@@ -48,4 +48,30 @@ bool Bishop::canGetTo(size_t x_final, size_t y_final)
     return reachable;
 }
 
+int Bishop::reachableInHowManySteps(size_t x_final, size_t y_final)
+{
+    size_t idx_final = idxFromXY(x_final, y_final);
+    int diffIdx = idx_final - idx_pos;
+    // if it is the same point...
+    if(diffIdx == 0)
+    {
+        return 0;
+    }
+    // if the point is not reachable...
+    if(canGetTo(x_final,y_final) == false)
+    {
+        return -1;
+    }
+    // So, it rests to know if it is reachable in one or two steps....
+    //      if it is one step away from the north-west/south-est diagonal, the diffIdx is modulo of 9
+    //      if it is one step away from the north-est/south-west diagonal (mmodulo of 7)
+    if(diffIdx % 9 == 0 || diffIdx % 7 == 0)
+    {
+        return 1;
+    }
+    // in any other cases, it is reachable in two steps
+    std::cout << diffIdx;
+    return 2;
+}
+
 } // namespace chess

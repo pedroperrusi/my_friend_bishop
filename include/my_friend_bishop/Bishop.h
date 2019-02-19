@@ -95,6 +95,8 @@ public:
  */
   bool canGetTo(size_t x_final, size_t y_final);
 
+  int reachableInHowManySteps(size_t x_final, size_t y_final);
+
   /** Get/Set methods ---------------------- */
   inline size_t getX() { return x_pos; };
 

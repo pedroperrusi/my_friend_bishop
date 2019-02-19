@@ -49,7 +49,7 @@ TEST(Bishop, arbitrary_2D_position_to_idx)
 
 TEST(Bishop, first_row_idx_to_2d_position)
 {
-    // 5th row, 2nd collumn starting from 0, as C standard
+    // equvalent to the postion pair (x=5,y=0)
     Bishop friendBishop(5);
     ASSERT_EQ(friendBishop.getIdx(), 5);
     ASSERT_EQ(friendBishop.getX(), 5);
@@ -58,7 +58,7 @@ TEST(Bishop, first_row_idx_to_2d_position)
 
 TEST(Bishop, second_row_idx_to_2d_position)
 {
-    // 5th row, 2nd collumn starting from 0, as C standard
+    // equvalent to the postion pair (x=2,y=1)
     Bishop friendBishop(10);
     ASSERT_EQ(friendBishop.getIdx(), 10);
     ASSERT_EQ(friendBishop.getX(), 2);
@@ -67,14 +67,12 @@ TEST(Bishop, second_row_idx_to_2d_position)
 
 TEST(Bishop, trivial_a_possible_position)
 {
-    // 5th row, 2nd collumn starting from 0, as C standard
     Bishop friendBishop(1, 2);
     ASSERT_TRUE(friendBishop.canGetTo(1,2));
 }
 
 TEST(Bishop, first_row_possible_position)
 {
-    // 5th row, 2nd collumn starting from 0, as C standard
     Bishop friendBishop(0, 0);
     ASSERT_FALSE(friendBishop.canGetTo(1,0));
     ASSERT_TRUE(friendBishop.canGetTo(2,0));
@@ -82,7 +80,6 @@ TEST(Bishop, first_row_possible_position)
 
 TEST(Bishop, first_col_possible_position)
 {
-    // 5th row, 2nd collumn starting from 0, as C standard
     Bishop friendBishop(0, 0);
     ASSERT_TRUE(friendBishop.canGetTo(2,0));
     ASSERT_FALSE(friendBishop.canGetTo(3,0));
@@ -90,8 +87,38 @@ TEST(Bishop, first_col_possible_position)
 
 TEST(Bishop, any_col_possible_position)
 {
-    // 5th row, 2nd collumn starting from 0, as C standard
     Bishop friendBishop(1, 5);
     ASSERT_TRUE(friendBishop.canGetTo(3,7));
     ASSERT_FALSE(friendBishop.canGetTo(1,0));
+}
+
+TEST(Bishop, trivial_reachable_in_0_steps)
+{
+    Bishop friendBishop(1, 5);
+    ASSERT_EQ(friendBishop.reachableInHowManySteps(1,5), 0);
+}
+
+TEST(Bishop, trivial_non_reachable_in_any_steps)
+{
+    Bishop friendBishop(1, 5);
+    ASSERT_EQ(friendBishop.reachableInHowManySteps(2,5), -1);
+}
+
+TEST(Bishop, reachable_in_one_step)
+{
+    Bishop friendBishop(3, 3);
+    // north-west/south-est diagonal
+    ASSERT_EQ(friendBishop.reachableInHowManySteps(0,0), 1);
+    ASSERT_EQ(friendBishop.reachableInHowManySteps(5,5), 1);
+    // north-est/south-west diagonal
+    ASSERT_EQ(friendBishop.reachableInHowManySteps(2,4), 1);
+    ASSERT_EQ(friendBishop.reachableInHowManySteps(4,2), 1);
+}
+
+TEST(Bishop, reachable_in_two_steps)
+{
+    // 5th row, 2nd collumn starting from 0, as C standard
+    Bishop friendBishop(3, 3);
+    ASSERT_EQ(friendBishop.reachableInHowManySteps(5,3), 2);
+    ASSERT_EQ(friendBishop.reachableInHowManySteps(1,3), 2);
 }
