@@ -71,3 +71,11 @@ TEST(Bishop, trivial_a_possible_position)
     Bishop friendBishop(1, 2);
     ASSERT_TRUE(friendBishop.canGetTo(1,2));
 }
+
+TEST(Bishop, first_row_possible_position)
+{
+    // 5th row, 2nd collumn starting from 0, as C standard
+    Bishop friendBishop(0, 0);
+    ASSERT_FALSE(friendBishop.canGetTo(1,0));
+    ASSERT_TRUE(friendBishop.canGetTo(2,0));
+}

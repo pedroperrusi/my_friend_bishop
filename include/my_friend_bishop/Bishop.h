@@ -18,6 +18,18 @@ namespace chess
 {
 const size_t CHESS_BOARD_WIDTH = 8;
 const size_t CHESS_BOARD_HIGHT = 8;
+
+/**
+ * @brief Set the Idx From 2D X and Y coordibates
+ * 
+ */
+inline static size_t idxFromXY(size_t x, size_t y)
+{
+size_t idx = x + y * CHESS_BOARD_WIDTH;
+return idx;
+}
+
+
 /**
  * @brief Class representing our friend Bishop
  * 
@@ -71,14 +83,8 @@ public:
     setXYFromIdx();
   };
 
-  inline bool canGetTo(size_t x_final, size_t y_final)
-  {
-    if(x_final == x_pos && y_final == y_pos)
-    {
-      return true;
-    }
-    return false;  
-  }
+  bool canGetTo(size_t x_final, size_t y_final);
+  
 
 /** Get/Set methods ---------------------- */
   inline size_t getX() { return x_pos; };
@@ -108,10 +114,9 @@ private:
      * @brief Set the Idx From 2D X and Y coordibates
      * 
      */
-  inline size_t setIdxFromXY()
+  inline void setIdxFromXY()
   {
-    idx_pos = x_pos + y_pos * CHESS_BOARD_WIDTH;
-    return idx_pos;
+    idx_pos = idxFromXY(this->x_pos, this->y_pos);
   }
 
   /**
