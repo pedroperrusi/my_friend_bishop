@@ -64,3 +64,10 @@ TEST(Bishop, second_row_idx_to_2d_position)
     ASSERT_EQ(friendBishop.getX(), 2);
     ASSERT_EQ(friendBishop.getY(), 1);
 }
+
+TEST(Bishop, trivial_a_possible_position)
+{
+    // 5th row, 2nd collumn starting from 0, as C standard
+    Bishop friendBishop(1, 2);
+    ASSERT_TRUE(friendBishop.canGetTo(1,2));
+}

@@ -71,6 +71,15 @@ public:
     setXYFromIdx();
   };
 
+  inline bool canGetTo(size_t x_final, size_t y_final)
+  {
+    if(x_final == x_pos && y_final == y_pos)
+    {
+      return true;
+    }
+    return false;  
+  }
+
 /** Get/Set methods ---------------------- */
   inline size_t getX() { return x_pos; };
 
