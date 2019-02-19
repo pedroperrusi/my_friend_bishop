@@ -19,7 +19,8 @@ namespace chess
  * @brief Verify wheather a position is reachable for the bishop
  * 
  * We can compare the parity between the initial and final position indexes.
- * 
+ * For the first row (0), if initial index and final index have the same parity, they're reachable.
+ * If its an odd row, the relation inverses itself.
  * 
  * @param x_final 
  * @param y_final 
@@ -27,14 +28,24 @@ namespace chess
  * @return false 
  */
 bool Bishop::canGetTo(size_t x_final, size_t y_final)
-  {
+{
+    // output variable
+    bool reachable; // useful for the inversing relations
     size_t idx_final = idxFromXY(x_final, y_final);
-    if(idx_final % 2 == idx_pos % 2)
+    if (idx_final % 2 == idx_pos % 2)
     {
-      return true;
+        reachable = true;
     }
-    return false;  
-  }
+    else
+    {
+        reachable = false;
+    }
+    // if we're on an odd collumn, reverse the relation
+    if(y_pos % 2 == 1)
+    {
+        reachable = !reachable;
+    }
+    return reachable;
+}
 
-
-} // namespace bunny_mesh
+} // namespace chess
