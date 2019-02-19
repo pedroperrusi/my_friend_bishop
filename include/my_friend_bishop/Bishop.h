@@ -95,6 +95,19 @@ public:
  */
   bool canGetTo(size_t x_final, size_t y_final);
 
+  /**
+ * @brief Determines how many bishop moves are necessary to go ftom the bishop position to a final possition.
+ * 
+ * The possible outputs are:
+ *      - -1: when the final point is not reachable from the starting point
+ *      - 0: when the starting point is the final point
+ *      - 1: when the final point is in one of the diagonals of the starting point
+ *      - 2: any other case when the point is reachable but not directly. It will taky the bishop two moves to get there 
+ * 
+ * @param x_final 
+ * @param y_final 
+ * @return int
+ */
   int reachableInHowManySteps(size_t x_final, size_t y_final);
 
   /** Get/Set methods ---------------------- */
